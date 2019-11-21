@@ -30,21 +30,23 @@
 			Boy  name = <span class="keyword">Mr</span>  CHEN<br />
 			Girl name = <span class="keyword">Mrs</span> CHEN<br />
 			They met in 2019-02-10.<br />
-			
+			They got married on 2019-08-16
 			<br>
 			<br>
 			 I want to say:<br />
-			I love you forever;<br /> 
+			 I love you forever;<br /> 
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
 			<div id="words">
 				<div id="messages">
-					相识的时光：
+					♥♥相识：
 					<div id="elapseClock"></div>
+					♥婚姻：
+					<div id="marriedClock"></div>
 				</div>
 				<div id="loveu">
-					希望直到永远！
+					♥♥和你直到永远♥♥！
 				</div>
 			</div>
 		</div>
@@ -60,6 +62,16 @@ together.setHours(15);
 together.setMinutes(0);
 together.setSeconds(0);
 together.setMilliseconds(0);
+
+
+var marry  = new Date();
+marry.setFullYear(2019, 7, 16);
+marry.setHours(12);
+marry.setMinutes(0);
+marry.setSeconds(0);
+marry.setMilliseconds(0);
+
+
 
 if (!document.createElement('canvas').getContext) {
 	var msg = document.createElement("div");
@@ -79,14 +91,16 @@ if (!document.createElement('canvas').getContext) {
 	setInterval(function () {
 		timeElapse(together);
 	}, 500);
+	
+	marryElapse(marry);
+	setInterval(function () {
+		marryElapse(marry);
+	}, 650);
 
 	adjustCodePosition();
 	nowDate();
 	$("#code").typewriter();
 	
-	//$("#nodate").html(nowDate());
-	console.log("<<<<<<<<nowDate():",nowDate());
-	console.log("<<<<<<<<$(nodate):",$("#nodate").html(nowDate()));
 }
 </script>
 
